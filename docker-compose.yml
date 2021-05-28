@@ -6,9 +6,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=chatbot
-      - POSTGRES_PASSWORD=chatbot
-      - POSTGRES_DB=chatbot
+      - POSTGRES_USER=shaman
+      - POSTGRES_PASSWORD=shaman
+      - POSTGRES_DB=shaman
     ports:
       - "5432:5432"
 
