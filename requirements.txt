@@ -1,0 +1,9 @@
+celery
+dacite
+Django
+jsonpickle
+python-decouple
+psycopg2-binary
+redis
+requests
+
