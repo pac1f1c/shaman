@@ -14,9 +14,9 @@ from django.core.validators import (
 )
 from django.utils.translation import gettext as _
 
-from django_chatbot.models import Form as FormKeeper, Update
-from django_chatbot.telegram.api import SendMessageParams
-from django_chatbot.telegram.types import (
+from shaman.models import Form as FormKeeper, Update
+from shaman.telegram.api import SendMessageParams
+from shaman.telegram.types import (
     InlineKeyboardButton, InlineKeyboardMarkup,
 )
 

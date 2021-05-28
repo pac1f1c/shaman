@@ -1,12 +1,12 @@
 from django.conf import settings
 from django.core.management import BaseCommand
 
-from django_chatbot.models import Bot
+from shaman.models import Bot
 
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        for bot_settings in settings.DJANGO_CHATBOT['BOTS']:
+        for bot_settings in settings.shaman['BOTS']:
             name = bot_settings['NAME']
             token = bot_settings['TOKEN']
             root_handlerconf = bot_settings['ROOT_HANDLERCONF']

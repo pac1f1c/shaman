@@ -1,6 +1,6 @@
 from django.core.management import BaseCommand
 
-from django_chatbot.models import Bot
+from shaman.models import Bot
 from telegram.api import TelegramError
 
 

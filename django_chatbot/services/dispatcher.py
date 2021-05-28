@@ -7,14 +7,14 @@ from typing import Dict, Iterable, List
 
 from django.conf import settings
 
-from django_chatbot.models import Bot, Form, Update
-from django_chatbot.handlers import Handler
-from django_chatbot.telegram.types import Update as TelegramUpdate
+from shaman.models import Bot, Form, Update
+from shaman.handlers import Handler
+from shaman.telegram.types import Update as TelegramUpdate
 
 log = logging.getLogger(__name__)
 
 
-@lru_cache(maxsize=settings.DJANGO_CHATBOT.get('LOAD_HANDLERS_CACHE_SIZE'))
+@lru_cache(maxsize=settings.shaman.get('LOAD_HANDLERS_CACHE_SIZE'))
 def load_handlers() -> Dict[str, List[Handler]]:
     """Load registered handlers for all bots
 
@@ -37,7 +37,7 @@ def load_handlers() -> Dict[str, List[Handler]]:
 def _load_bot_handlers(module_name: str) -> List[Handler]:
     """Return handler for a bot.
 
-    django_chatbot loads the module and looks for the variable `handlers`.
+    shaman loads the module and looks for the variable `handlers`.
     This should be a list of `Handler` instances.
 
     Args:

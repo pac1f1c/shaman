@@ -10,10 +10,10 @@ from django.forms import Form
 from django.test import TestCase as DjangoTestCase
 from django.utils import timezone
 
-from django_chatbot.models import Bot, CallbackQuery, Chat, Message, Update, \
+from shaman.models import Bot, CallbackQuery, Chat, Message, Update, \
     User
-from django_chatbot.services.dispatcher import Dispatcher
-from django_chatbot.telegram import types
+from shaman.services.dispatcher import Dispatcher
+from shaman.telegram import types
 
 START_USER_ID = 1000
 
@@ -180,7 +180,7 @@ class MockUser:
         )
 
 
-class MockChatbot:
+class MockShaman:
     def __init__(self):
         self.sent_messages = []
 
@@ -238,10 +238,10 @@ class TestCase(DjangoTestCase):
 
     def setUp(self) -> None:
         super().setUp()
-        self.mock_chatbot = MockChatbot()
+        self.mock_Shaman = MockShaman()
         self.send_message_patcher = patch(
-            "django_chatbot.telegram.api.Api.send_message",
-            side_effect=self.mock_chatbot.send_message_patch
+            "shaman.telegram.api.Api.send_message",
+            side_effect=self.mock_Shaman.send_message_patch
         )
         self.send_message_patcher.start()
 

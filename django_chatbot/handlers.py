@@ -6,8 +6,8 @@ from typing import Callable, Optional, Type
 
 from celery import group
 
-from django_chatbot.forms import Form
-from django_chatbot.models import Update
+from shaman.forms import Form
+from shaman.models import Update
 
 log = logging.getLogger(__name__)
 

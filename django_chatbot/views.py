@@ -7,7 +7,7 @@ from django.http import JsonResponse, HttpRequest
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_exempt
 
-from django_chatbot.tasks import dispatch
+from shaman.tasks import dispatch
 
 log = logging.getLogger(__name__)
 

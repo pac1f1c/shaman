@@ -11,8 +11,8 @@ from django.utils import timezone
 from django.utils.functional import cached_property
 from django.utils.text import slugify
 
-from django_chatbot.telegram.api import Api, TelegramError
-from django_chatbot.telegram import types
+from shaman.telegram.api import Api, TelegramError
+from shaman.telegram import types
 
 log = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ class Bot(models.Model):
 
     Don't create or update a bot directly. It is better to add a bot to
     the ``settings``. To create a bot, firstly add the bot to the
-    ``settings.DJANGO_CHATBOT["BOTS"]`` as a dictionary in format::
+    ``settings.shaman["BOTS"]`` as a dictionary in format::
 
         {
             "NAME"': "@YourBot",
@@ -132,7 +132,7 @@ class Bot(models.Model):
         https://core.telegram.org/bots/api#setwebhook
 
         Args:
-            domain: The ``django_chatbot`` domain.
+            domain: The ``shaman`` domain.
             max_connections: Maximum allowed number of simultaneous HTTPS
                 connections to the webhook for update delivery.
             allowed_updates: A JSON-serialized list of the update types
@@ -146,9 +146,9 @@ class Bot(models.Model):
 
         """
         if domain is None:
-            domain = settings.DJANGO_CHATBOT['WEBHOOK_DOMAIN']
+            domain = settings.shaman['WEBHOOK_DOMAIN']
         url = domain + reverse(
-            "django_chatbot:webhook",
+            "shaman:webhook",
             kwargs={'token_slug': self.token_slug}
         )
         if max_connections is None:

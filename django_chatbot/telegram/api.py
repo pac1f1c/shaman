@@ -65,7 +65,7 @@ class _Binder:
     """Helper class for communicating with Telegram Bot API.
 
     The class sends requests to Telegram API and casts responses
-    to django_chatbot types.
+    to shaman types.
 
     Args:
         token: Bot token.

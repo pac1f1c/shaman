@@ -5,7 +5,7 @@ import logging
 from celery import Task
 from celery import shared_task
 
-from django_chatbot.services.dispatcher import Dispatcher
+from shaman.services.dispatcher import Dispatcher
 
 log = logging.getLogger(__name__)
 
