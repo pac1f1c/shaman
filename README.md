@@ -19,9 +19,9 @@ Run ngrok:
 Create the ``.env`` file the in current directory:
 
     SECRET_KEY=...
-    CHATBOT_WEBHOOK_DOMAIN=https://...ngrok.io
-    CHATBOT_NAME=@...
-    CHATBOT_TOKEN=...
+    SHAMAN_WEBHOOK_DOMAIN=https://...ngrok.io
+    SHAMAN_NAME=@...
+    SHAMAN_TOKEN=...
 
 Put there a Django ``SECRET_KEY`` and the ngrok domain. Create a new telegram bot via ``@BotFather``.
 
@@ -34,4 +34,4 @@ Create a virtual environment, install the requirements, run Django server:
 Run celery worker in another terminal window:
 
 
-    $ celery -A django_chatbot worker -l DEBUG
+    $ celery -A shaman worker -l DEBUG
